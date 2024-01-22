@@ -6,11 +6,12 @@ Command to ssh into gcp using external IP address
 ###
 
 Had to also pip install psycopg2-binary to get pgcli and postgresql to work
+pip: pandas, psycopg2-binary, postgresql
 
-pip: pandas, psycopg2-binary, postgresql, 
-
+# To get pgcli to run
 pgcli -h localhost -p 5432 -u root -d ny_taxi
 
+# Virtual Environment setup
 # https://python.land/virtual-environments/virtualenv
 # Create a venv
 python3 -m venv zoomcamp_venv
@@ -20,3 +21,12 @@ python3 -m venv zoomcamp_venv
 python -m ipykernel install --name=zoomcamp_env
 # In Jupyter, select Kernel then select the venv and restart the notebook
 # https://towardsdatascience.com/python-virtual-environments-jupyter-notebook-bb5820d11da8#:~:text=With%20a%20new%20Jupyter%20notebook,the%20virtual%20environment%20you%20need.
+
+# Github setup
+1. Create remote repo
+2. In local repo run git init
+3. git add . (add files to gitignore to prevent adding)
+4. git commit -m "First commit"
+5. git remote add origin <remote url>
+6. git push origin main
+7. git branch --set-upstream-to=origin/main main
