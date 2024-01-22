@@ -1,0 +1,22 @@
+ssh -i ~/.ssh/gcp dwilson@34.31.226.193
+
+Command to ssh into gcp using external IP address
+
+
+###
+
+Had to also pip install psycopg2-binary to get pgcli and postgresql to work
+
+pip: pandas, psycopg2-binary, postgresql, 
+
+pgcli -h localhost -p 5432 -u root -d ny_taxi
+
+# https://python.land/virtual-environments/virtualenv
+# Create a venv
+python3 -m venv zoomcamp_venv
+# Activate venv
+. zoomcamp_venv/bin/activate
+# Install venv for Jupyter notebook
+python -m ipykernel install --name=zoomcamp_env
+# In Jupyter, select Kernel then select the venv and restart the notebook
+# https://towardsdatascience.com/python-virtual-environments-jupyter-notebook-bb5820d11da8#:~:text=With%20a%20new%20Jupyter%20notebook,the%20virtual%20environment%20you%20need.
