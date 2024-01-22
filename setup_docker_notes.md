@@ -71,3 +71,20 @@ Instead of individually running the above multiple times, use docker-compose wit
 '''
 docker-compose up
 '''
+
+For homework (after running docker-compose up), we would have to update the URL to the correct file (2019-09), then we can change the table name to green taxi trips.
+'''
+URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-09.csv.gz"
+
+docker run -it \
+    --network=pg-network \
+    taxi_ingest:v001 \
+        --user=root \
+        --password=root \
+        --host=pg-database \
+        --port=5432 \
+        --db=ny_taxi \
+        --table_name=green_taxi_trips \
+        --url=${URL}
+'''
+The problem is, there is a different schema than yellow trips. For quick analysis I have instead used jupyter to manually upload.
