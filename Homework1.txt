@@ -1,0 +1,65 @@
+Question 1
+--rm
+
+Question 2
+Had to recreate a dockerfile with just Python 3.9 (not 3.9.1) and load into bash to get info
+--0.42.0
+
+Question 3
+SELECT count(1)
+FROM public.green_trips
+WHERE CAST(lpep_pickup_datetime AS DATE) = '2019-09-18' AND CAST(lpep_dropoff_datetime AS DATE) = '2019-09-18'
+
+15612
+
+Question 4
+SELECT CAST(lpep_pickup_datetime AS DATE) as Date, max(trip_distance) as "Max Distance"
+FROM public.green_trips
+WHERE CAST(lpep_pickup_datetime AS DATE) = '2019-09-18' OR
+CAST(lpep_pickup_datetime AS DATE) = '2019-09-16' OR
+CAST(lpep_pickup_datetime AS DATE) = '2019-09-26' OR
+CAST(lpep_pickup_datetime AS DATE) = '2019-09-21'
+GROUP BY CAST(lpep_pickup_datetime AS DATE)
+
+"date"	"Max Distance"
+"2019-09-21"	135.53
+"2019-09-26"	341.64
+"2019-09-16"	114.3
+"2019-09-18"	70.28
+
+Question 5
+SELECT sum(g."total_amount") as "Sum Total", z."Borough"
+FROM public.green_trips g JOIN public.zones z
+	ON g."PULocationID" = z."LocationID"
+WHERE CAST(g.lpep_pickup_datetime AS DATE) = '2019-09-18' AND z."Borough" != 'Unknown'
+GROUP BY z."Borough"
+--HAVING sum(g."total_amount") > 50000
+ORDER BY sum(g."total_amount") DESC
+
+"Sum Total"	"Borough"
+96333.23999999947	"Brooklyn"
+92271.3000000014	"Manhattan"
+78671.71000000133	"Queens"
+32830.08999999984	"Bronx"
+342.59	"Staten Island"
+
+Question 6
+SELECT max(g."tip_amount") AS "Largest Tip", zpu."Zone" AS "Pick-Up Zone", zdo."Zone" AS "Drop-Off Zone"
+FROM public.green_trips g
+	JOIN public.zones zpu
+		ON g."PULocationID" = zpu."LocationID"
+	JOIN public.zones zdo
+		ON g."DOLocationID" = zdo."LocationID"
+WHERE zpu."Zone" = 'Astoria'
+GROUP BY zpu."Zone", zdo."Zone"
+ORDER BY max(g."tip_amount") DESC
+LIMIT 1
+
+"Largest Tip"	"Pick-Up Zone"	"Drop-Off Zone"
+62.31	"Astoria"	"JFK Airport"
+
+Question 7
+
+
+Question 8
+https://github.com/Wilson2214/zoomcamp
