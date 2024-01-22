@@ -66,3 +66,6 @@ docker run -it \
         --db=ny_taxi \
         --table_name=yellow_taxi_trips \
         --url=${URL}
+
+
+# Instead of individually running the above multiple times, use docker-compose
