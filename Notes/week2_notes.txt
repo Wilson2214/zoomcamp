@@ -7,3 +7,5 @@ Some of the highlights included:
 - Exploring the benefits of partitioning with parquet
 
 Follow my journey here to learn more!
+
+https://medium.com/@daveee6/data-engineering-zoomcamp-week-2-1806eab325a6
