@@ -1,0 +1,22 @@
+Question 1
+266855 rows x 20 columns
+
+Question 2
+139370 rows x 21 columns
+
+Question 3
+data['lpep_pickup_date'] = data['lpep_pickup_datetime'].dt.date
+
+Question 4
+1 and 2 (originally also had some NA values)
+
+Question 5
+4: VendorID, RatecodeID, PULocationID, DOLocationID
+
+Question 6
+Got 95 partitions but this was not a multiple choice option, so went with 96 as it was the closest. Checked number of unique values and it shows 96.
+
+Question 7
+https://github.com/Wilson2214/zoomcamp
+
+Question 8

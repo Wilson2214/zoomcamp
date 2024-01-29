@@ -1,0 +1,9 @@
+I've completed Week 2 of my Data Engineering Zoomcamp 🚀
+
+Some of the highlights included:
+
+- Configuring Mage and Postgres with Docker
+- Building data pipelines with Mage including ingesting raw data, staging in object storage, transforming variables and schema, and writing to an OLAP database
+- Exploring the benefits of partitioning with parquet
+
+Follow my journey here to learn more!
