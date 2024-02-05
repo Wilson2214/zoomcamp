@@ -1,3 +1,10 @@
+variable "credentials" {
+  description = "My Credentials"
+  default     = "./my-creds.json"
+  #ex: if you have a directory where this file is called keys with your service account json file
+  #saved there as my-creds.json you could use default = "./keys/my-creds.json"
+}
+
 variable "app_name" {
   type        = string
   description = "Application Name"
@@ -17,19 +24,19 @@ variable "container_memory" {
 variable "project_id" {
   type        = string
   description = "The name of the project"
-  default     = "unique-gcp-project-id"
+  default     = "zoomcamp-1-410619"
 }
 
 variable "region" {
   type        = string
   description = "The default compute region"
-  default     = "us-west2"
+  default     = "us-east4"
 }
 
 variable "zone" {
   type        = string
   description = "The default compute zone"
-  default     = "us-west2-a"
+  default     = "us-east4-a"
 }
 
 variable "repository" {
@@ -41,7 +48,7 @@ variable "repository" {
 variable "database_user" {
   type        = string
   description = "The username of the Postgres database."
-  default     = "mageuser"
+  default     = "postgres"
 }
 
 variable "database_password" {
