@@ -1,0 +1,86 @@
+# Question 1
+limit = 5
+generator = square_root_generator(limit)
+
+vals = []
+
+for sqrt_value in generator:
+    vals.append(sqrt_value)
+    print(sqrt_value)
+    
+print(sum(vals))
+
+8.382332347441762
+
+# Question 2
+limit = 13
+generator = square_root_generator(limit)
+
+vals = []
+
+for sqrt_value in generator:
+    vals.append(sqrt_value)
+
+print(vals[12]) # index 12 is 13th item
+
+3.605551275463989
+
+# Question 3
+import dlt
+import duckdb
+
+# Define the table in duckdb
+generator_pipeline = dlt.pipeline(destination='duckdb', dataset_name='people')
+
+# Load people 1 generator
+info = generator_pipeline.run(people_1(),
+                              table_name="people_records",
+                              write_disposition="merge")
+conn = duckdb.connect(f"{generator_pipeline.pipeline_name}.duckdb")
+
+people_tab = conn.sql("SELECT SUM(age) as 'Total Age' FROM people.people_records").df()
+display(people_tab)
+
+# Result is 140
+
+# Append with people 2 generator
+info = generator_pipeline.run(people_2(),
+                              table_name="people_records",
+                              write_disposition="append")
+
+
+conn = duckdb.connect(f"{generator_pipeline.pipeline_name}.duckdb")
+
+people_tab = conn.sql("SELECT SUM(age) as 'Total Age' FROM people.people_records").df()
+display(people_tab)
+
+# Final result is 353
+
+# Question 4
+import dlt
+import duckdb
+
+# Define the table in duckdb
+generator_pipeline2 = dlt.pipeline(destination='duckdb', dataset_name='people2')
+
+# Load people 1 generator
+info = generator_pipeline2.run(people_1(),
+                              table_name="people_records2",
+                              write_disposition="merge",
+                              primary_key="ID")
+
+# Merge with people 2 generator
+info = generator_pipeline2.run(people_2(),
+                              table_name="people_records2",
+                              write_disposition="merge",
+                              primary_key="ID")
+
+conn = duckdb.connect(f"{generator_pipeline2.pipeline_name}.duckdb")
+
+# confirm we have 8 records and id 3 is age 33
+people_tab2 = conn.sql("SELECT * FROM people2.people_records2").df() #SUM(age) as 'Total Age' 
+
+people_tab2 = conn.sql("SELECT SUM(age) as 'Total Age' FROM people2.people_records2").df()
+display(people_tab2)
+
+# Result should be 266, but this is not a listed option in homework
