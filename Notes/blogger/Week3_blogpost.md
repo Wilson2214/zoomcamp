@@ -1,1 +1,10 @@
 Data Engineering ZoomCamp Week 3
+
+dlt Workshop
+This week started with a workshop on dlt or "data load tool". This is an open source library which enables data engineers to build data pipelines faster and better. The goal of dlt is to automate the tedious parts of data ingestion like loading, schema managment, data type detection, and scalability. This is important, because in essence "a data engineer's main goal is to ensure data flows from source systems to analytical destination". The process of this data flow is called an ETL or extracting, transforming (including normalizing), and loading.
+
+The highlight of this workshop was the discussion of a problem many data engineers, including myself, have faced. That problem is managing memory. ETL pipelines always need to work, but can run into issues because the size of the data is not always known. If we build a pipeline that loads a full dataset, it could potentially crash if the source data becomes too large. It is important then to be able to extract data without hitting hardware limits in relation to memory. The best option to manage memory issues is to control the maximum amount of memory used by streaming the data. In Python, this can be done with generators. Instead of defining a function that returns all data from the source, we define a generator which allows us to yield each row as we get the data without collecting it into memory. Implementing a generator with dlt allows for more efficient data processing and limits memory impacts.
+
+Data Warehousing with BigQuery
+
+Data Warehouses are an OLAP solution used for reporting and data analysis. One can think of a data warehouse as a final storage area for a number of data sources. This can include raw data, metadata, and summary data. BigQuery is a serverless data warehouse that allows data warehousing to be scalable and highly available. It also includes built-in features like machine learning and business intelligence.
