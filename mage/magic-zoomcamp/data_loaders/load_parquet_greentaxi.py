@@ -20,6 +20,9 @@ def load_data_from_api(*args, **kwargs):
         url = base_url + fn + '.parquet'
 
         df = pd.read_parquet(url)
+
+        df.lpep_pickup_datetime = df.lpep_pickup_datetime.values.astype('datetime64[ms]')
+        df.lpep_dropoff_datetime = df.lpep_dropoff_datetime.values.astype('datetime64[ms]')
         
         # Provide a parquet partition
         # df['month'] = fn
