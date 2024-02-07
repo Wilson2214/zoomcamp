@@ -2,8 +2,11 @@ I've completed Week 3 of my Data Engineering Zoomcamp 🚀
 
 Some of the highlights included:
 
-- 
+- A deep dive into data warehousing best practices
+- Building an ingestion pipeline with Mage for parquet files to GCP
+- Creating and interacting with external and materialized tables in Google Big Query
+- Testing the cost and time benefits of clustering and partitioning
 
 Follow my journey here to learn more!
 
-https://medium.com/@daveee6/data-engineering-zoomcamp-week-2-1806eab325a6
+https://medium.com/@daveee6/data-engineering-zoomcamp-week-3-15fefbe77f5a
