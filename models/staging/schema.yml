@@ -18,7 +18,7 @@ sources:
           # error_after: {count: 6, period: hour}
 
 models:
-  - name: ext_green_2019_2020_tripdata
+  - name: stg_green_tripdata
     description: >
       Trip made by green taxis, also known as boro taxis and street-hail liveries.
       Green taxis may respond to street hails,but only in the areas indicated in green on the
@@ -29,10 +29,10 @@ models:
       - name: tripid
         description: Primary key for this table, generated with a concatenation of vendorid+pickup_datetime
         tests:
-          - unique:
-              severity: warn
-          - not_null:
-              severity: warn
+            - unique:
+                severity: warn
+            - not_null:
+                severity: warn
       - name: VendorID
         description: >
           A code indicating the TPEP provider that provided the record.
@@ -109,7 +109,7 @@ models:
       - name: Total_amount
         description: The total amount charged to passengers. Does not include cash tips.
 
-  - name: ext_yellow_2019_2020_tripdata
+  - name: stg_yellow_tripdata
     description: >
       Trips made by New York City's iconic yellow taxis. 
       Yellow taxis are the only vehicles permitted to respond to a street hail from a passenger in all five
