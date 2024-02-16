@@ -1,0 +1,19 @@
+Question 1: dbt build --vars '{'is_test_run':'true'}'
+It's the same as running dbt build
+# This is because the default value of var is_test_run is true
+
+# Could alse be: It applied a limit 100 only to our staging models
+# because only the staging models included a variable for test runs
+#  `var('is_test_run', default=true)`
+
+Question 2: What is the code that our CI job will run?
+The code from a development branch requesting a merge to main
+# When a PR is ready to be merged, a webhook is received in dbt Cloud
+# that will enqueue a new run of the specified job
+# No PR will be able to be merged unless the CI run has been completed successfully
+
+Question 3: # of fact trips fhv
+SELECT count(*) FROM `zoomcamp-1-410619.dbt_dwilson.fact_trips_fhv`
+22998722
+
+Question 4: 
