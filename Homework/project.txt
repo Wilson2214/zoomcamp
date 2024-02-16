@@ -1,0 +1,5 @@
+1. Docker to create environment
+2. Terraform to create cloud environment
+3. Mage to Ingest and Transform, then upload to GCS
+4. dbt to transform and add to Big Query
+5. Looker for dashboard insights

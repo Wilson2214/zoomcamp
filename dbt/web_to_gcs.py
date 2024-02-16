@@ -61,7 +61,9 @@ def web_to_gcs(year, service):
         print(f"GCS: {service}/{file_name}")
 
 #https://www.jonahboliver.com/blog/de-zc-w3
+#https://stackoverflow.com/questions/62650315/how-to-read-a-parquet-file-change-datatype-and-write-to-another-parquet-file-i
 # Investigate for more details
+# Idea would be to load parquet file, typecast, then write
 
 #web_to_gcs('2019', 'green')
 #web_to_gcs('2020', 'green')

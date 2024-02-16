@@ -16,4 +16,7 @@ Question 3: # of fact trips fhv
 SELECT count(*) FROM `zoomcamp-1-410619.dbt_dwilson.fact_trips_fhv`
 22998722
 
-Question 4: 
+Question 4: What is the service that had the most rides during the month of July 2019
+Green: 415,281
+Yellow: 3,250,103
+FHV: 290,680
