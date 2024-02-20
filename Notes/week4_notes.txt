@@ -1,0 +1,12 @@
+I've completed Week 4 of my Data Engineering Zoomcamp 🚀
+
+Some of the highlights included:
+
+- Comparing ETL and ELT and their various tools
+- Building and documenting transformation models in dbt
+- Implementing continuous integration with dbt cloud and GitHub
+- Visualizing data with Looker on Google Cloud
+
+Follow my journey here to learn more!
+
+https://medium.com/@daveee6/data-engineering-zoomcamp-week-4-9cd45d88bfa5
