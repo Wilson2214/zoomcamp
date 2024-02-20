@@ -1,5 +1,9 @@
-1. Docker to create environment
-2. Terraform to create cloud environment
+1. Docker to create environment (including mage, postgres, dbt, python+packages)
+2. Terraform to create cloud environment (buckets and big query)
+    - This is used to create the environment you will be running in case someone else were to create it themselves
 3. Mage to Ingest and Transform, then upload to GCS
-4. dbt to transform and add to Big Query
+    - This will use python and sql to store data in bucket, then add to BigQuery
+    - May also utilize pyspark from Week 6 and 7 but still need to see
+4. dbt to transform and create fact tables in Big Query
+    - dbt can be run from mage pipeline so every
 5. Looker for dashboard insights
