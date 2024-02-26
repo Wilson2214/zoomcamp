@@ -1,0 +1,43 @@
+Question 1
+'3.5.0'
+
+Question 2
+Each file is ~6.3mb
+
+Question 3
+df.filter(df.pickup_date == '2019-10-15').groupby("pickup_date").count().show()
+
+62,610
+
+Question 4
+df \
+    .withColumn('duration', (df.dropOff_datetime.cast('long') - df.pickup_datetime.cast('long'))/60/60) \
+    .withColumn('pickup_date', F.to_date(df.pickup_datetime)) \
+    .groupBy('pickup_date') \
+        .max('duration') \
+    .orderBy('max(duration)', ascending=False) \
+    .limit(5) \
+    .show()
+
+631,152.50
+
+Question 5
+Port 4040
+
+http://localhost:4040/jobs/
+
+Question 6
+spark.sql("""
+SELECT
+    pul.Zone,
+    COUNT(1)
+FROM 
+    fhv_2019_10 fhv LEFT JOIN zones pul ON fhv.PULocationID = pul.LocationID
+GROUP BY 
+    pul.Zone
+ORDER BY
+    2 ASC
+LIMIT 5;
+""").show()
+
+Jamaica Bay|       1
