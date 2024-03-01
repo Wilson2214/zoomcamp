@@ -1,0 +1,11 @@
+I've completed Week 5 of my Data Engineering Zoomcamp 🚀
+
+Some of the highlights included:
+
+- An explanation of batch processing and its advantages for ETL
+- A deep dive into Spark and implementation with Pyspark
+- Writing and Deploying PySpark scripts in Google Cloud
+
+Follow my journey here to learn more!
+
+https://medium.com/@daveee6/data-engineering-zoomcamp-week-4-9cd45d88bfa5
